@@ -531,7 +531,7 @@ input:focus {
 
 .notice {
     display: none;
-    margin: -24px 0 24px;
+    margin: 0 0 24px;
     padding: 12px 14px;
     border-radius: 10px;
     font-size: 13px;
