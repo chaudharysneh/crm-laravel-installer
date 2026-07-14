@@ -406,6 +406,19 @@ label {
     font-weight: 600;
 }
 
+.field-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.field-label i {
+    width: 15px;
+    color: var(--green);
+    font-size: 13px;
+    text-align: center;
+}
+
 label small {
     color: #9d8f88;
     font-weight: 400;
@@ -428,6 +441,39 @@ input:focus {
     border-color: var(--green);
     box-shadow: 0 0 0 3px rgba(255, 107, 44, .13);
     background: #fff;
+}
+
+.password-field {
+    position: relative;
+    display: block;
+}
+
+.password-field input {
+    padding-right: 46px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    color: #9d5b40;
+    background: transparent;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: .2s;
+}
+
+.password-toggle:hover {
+    color: var(--green-dark);
+    background: var(--mint);
 }
 
 .field-grid {
