@@ -39,6 +39,7 @@ $totalRequirements = count($requirements);
     <meta name="robots" content="noindex, nofollow">
     <title>Install Fablead CRM</title>
     <link rel="icon" type="image/png" href="installer-config/fablead-favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="installer-config/style.css">
 </head>
 <body>
@@ -106,15 +107,15 @@ $totalRequirements = count($requirements);
             <p class="description">The database will be created if it doesn’t exist. Existing databases are never dropped.</p>
             <form id="dbForm" novalidate>
                 <div class="field-grid two">
-                    <label>Database host<input name="dbHost" value="127.0.0.1" required></label>
-                    <label>Port<input name="dbPort" value="3306" inputmode="numeric" required></label>
+                    <label><span class="field-label"><i class="fa-solid fa-server"></i>Database host</span><input name="dbHost" value="127.0.0.1" required></label>
+                    <label><span class="field-label"><i class="fa-solid fa-network-wired"></i>Port</span><input name="dbPort" value="3306" inputmode="numeric" required></label>
                 </div>
-                <label>Database name<input name="dbName" placeholder="fablead_crm" pattern="[A-Za-z0-9_$-]+" required></label>
+                <label><span class="field-label"><i class="fa-solid fa-database"></i>Database name</span><input name="dbName" placeholder="fablead_crm" pattern="[A-Za-z0-9_$-]+" required></label>
                 <div class="field-grid two">
-                    <label>Username<input name="dbUser" value="root" autocomplete="username" required></label>
-                    <label>Password <small>(can be blank)</small><input name="dbPassword" type="password" autocomplete="current-password"></label>
+                    <label><span class="field-label"><i class="fa-solid fa-user"></i>Username</span><input name="dbUser" value="root" autocomplete="username" required></label>
+                    <label><span class="field-label"><i class="fa-solid fa-lock"></i>Password <small>(can be blank)</small></span><span class="password-field"><input name="dbPassword" type="password" autocomplete="current-password"><button type="button" class="password-toggle" aria-label="Show password" data-toggle-password><i class="fa-solid fa-eye"></i></button></span></label>
                 </div>
-                <label>Application URL<input name="baseUrl" type="url" value="<?= htmlspecialchars($_SESSION['BASE_URL']) ?>" required></label>
+                <label><span class="field-label"><i class="fa-solid fa-link"></i>Application URL</span><input name="baseUrl" type="url" value="<?= htmlspecialchars($_SESSION['BASE_URL']) ?>" required></label>
                 <button class="primary-button" type="submit">Save and continue <span>→</span></button>
             </form>
         </section>
@@ -134,9 +135,9 @@ $totalRequirements = count($requirements);
             <h3>Create your administrator</h3>
             <p class="description">This account receives the CRM’s admin role. Use a strong password with at least 8 characters.</p>
             <form id="adminForm" novalidate>
-                <label>Full name<input name="adminUsername" autocomplete="name" required></label>
-                <label>Email address<input name="adminEmail" type="email" autocomplete="email" required></label>
-                <label>Password<input name="adminPassword" type="password" minlength="8" autocomplete="new-password" required></label>
+                <label><span class="field-label"><i class="fa-solid fa-user-shield"></i>Full name</span><input name="adminUsername" autocomplete="name" required></label>
+                <label><span class="field-label"><i class="fa-solid fa-envelope"></i>Email address</span><input name="adminEmail" type="email" autocomplete="email" required></label>
+                <label><span class="field-label"><i class="fa-solid fa-key"></i>Password</span><span class="password-field"><input name="adminPassword" type="password" minlength="8" autocomplete="new-password" required><button type="button" class="password-toggle" aria-label="Show password" data-toggle-password><i class="fa-solid fa-eye"></i></button></span></label>
                 <button class="primary-button" type="submit">Finish installation <span>✓</span></button>
             </form>
         </section>
