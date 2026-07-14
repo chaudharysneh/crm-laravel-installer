@@ -195,6 +195,21 @@ h3 {
     line-height: 1;
 }
 
+.installer-tip {
+    display: block;
+    min-height: 15px;
+    font-size:13px;
+    font: inherit;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .26s ease, transform .26s ease;
+}
+
+.installer-tip.is-changing {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
 .wizard-panel {
     padding: 46px 64px;
 }

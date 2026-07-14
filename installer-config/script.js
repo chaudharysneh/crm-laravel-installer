@@ -42,6 +42,34 @@
         return data;
     };
 
+    const installerTips = [
+        'Please wait, your CRM is being prepared.',
+        'Do not refresh or close this page.',
+        'Extracting Laravel project files.',
+        'Large files may take a few minutes.',
+        'Preparing folders and required files.',
+        'The next step will appear automatically.',
+        'Laravel migrations will handle the database setup.',
+        'Your CRM workspace will be ready soon.',
+    ];
+    const installerTip = document.getElementById('installerTip');
+    let tipIndex = 0;
+    let tipTimer = null;
+    const startInstallerTips = () => {
+        if (!installerTip || tipTimer) return;
+
+        installerTip.textContent = installerTips[0];
+        tipTimer = setInterval(() => {
+            tipIndex = (tipIndex + 1) % installerTips.length;
+            installerTip.classList.add('is-changing');
+
+            setTimeout(() => {
+                installerTip.textContent = installerTips[tipIndex];
+                installerTip.classList.remove('is-changing');
+            }, 260);
+        }, 2600);
+    };
+
     document.querySelectorAll('[data-toggle-password]').forEach(button => {
         button.addEventListener('click', () => {
             const input = button.closest('.password-field')?.querySelector('input');
@@ -61,6 +89,7 @@
         const button = event.currentTarget;
         setBusy(button, true, 'Extracting project…');
         message();
+        startInstallerTips();
         const extractProgress = document.getElementById('extractProgress');
         const extractBar = document.getElementById('extractBar');
         const extractPercent = document.getElementById('extractPercent');

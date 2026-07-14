@@ -51,7 +51,10 @@ $totalRequirements = count($requirements);
             <h1>Your workspace,<br>ready in minutes.</h1>
             <p class="brand-copy">This wizard extracts the Laravel application, connects MySQL, runs migrations, and creates your administrator.</p>
         </div>
-        <div class="security-note"><span>✓</span> Guided Laravel setup with migrations, storage, and admin account.</div>
+        <div class="security-note">
+            <span>✓</span>
+            <strong id="installerTip" class="installer-tip">Guided Laravel setup with migrations, storage, and admin account.</strong>
+        </div>
     </aside>
 
     <section class="wizard-panel">
